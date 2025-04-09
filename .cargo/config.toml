@@ -1,0 +1,7 @@
+# Needed for apple silicon
+[target.aarch64-apple-darwin]
+linker = "clang"
+rustflags = ["-C", "symbol-mangling-version=v0"]
+
+[target.wasm32-unknown-unknown]
+rustflags = ["--cfg", "getrandom_backend=\"wasm_js\""]
